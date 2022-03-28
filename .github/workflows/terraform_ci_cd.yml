@@ -12,8 +12,8 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Install pytest
-        run: python3 -m pip install --upgrade pip && pip3 install pytest
+      - name: Install dependencies
+        run: python3 -m pip install --upgrade pip && pip3 install pytest && pip3 install boto3
 
       - name: Test get and put functions
         run: cd modules/back-end && pytest test_table.py -v
