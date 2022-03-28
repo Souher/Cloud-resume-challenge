@@ -21,14 +21,14 @@ class TestDatabaseFunctions(unittest.TestCase):
       self.assertIn('visitor-count', self.table.name)
       pprint(self.table)
 
-    def test_put_movie(self):
+    def test_put_item(self):
         from test_put_item import put_viewer_count
 
         result = put_viewer_count("0", "0", self.dynamodb)
         
         self.assertEqual(200, result['ResponseMetadata']['HTTPStatusCode'])
     
-    def test_get_movie(self):
+    def test_get_item(self):
         from test_put_item import put_viewer_count
         from test_get_item import get_viewer_count
 
