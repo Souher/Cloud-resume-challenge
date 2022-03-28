@@ -8,7 +8,7 @@ from moto import mock_dynamodb2
 class TestDatabaseFunctions(unittest.TestCase):
 
     def setUp(self):
-        self.dynamodb = boto3.resource('dynamodb', region_name='eu-west-2')
+        self.dynamodb = boto3.resource('dynamodb',region_name='eu-west-2')
         
         from create_mock_table import create_table
         self.table = create_table(self.dynamodb) 
