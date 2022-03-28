@@ -2,7 +2,7 @@ from pprint import pprint
 import boto3
 
 def create_table(dynamodb):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name = 'eu-west-2')
 
     table = dynamodb.create_table(
         TableName='visitor-count',
