@@ -28,13 +28,13 @@ resource "aws_dynamodb_table" "lock-state" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "remote-tf-state"
-    key            = "global/s3/terraform.tfstate"
-    region         = "eu-west-2"
+# terraform {
+#   backend "s3" {
+#     bucket         = "remote-tf-state"
+#     key            = "global/s3/terraform.tfstate"
+#     region         = "eu-west-2"
     
-    dynamodb_table = "remote-tf-state-lock"
-    encrypt        = true
-  }
-}
+#     dynamodb_table = "remote-tf-state-lock"
+#     encrypt        = true
+#   }
+# }
