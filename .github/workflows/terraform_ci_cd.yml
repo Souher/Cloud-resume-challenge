@@ -64,7 +64,7 @@ jobs:
 
       - name: Terraform init
         id: init
-        run: terraform init
+        run: cd runtime && terraform init
 
       - name: Terraform apply
         id: apply
