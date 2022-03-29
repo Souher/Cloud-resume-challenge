@@ -3,7 +3,6 @@ terraform {
   required_version = "~> 1.1.7"
 
   required_providers {
-    # source = "hashicorp/aws"
     aws  = "~> 3.74.1"
   }
 }
@@ -13,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "state-file" {
-  bucket = "remote-tf-state"
+  bucket = "souher-remote-tf-state"
   
   versioning {
     enabled = true
@@ -41,7 +40,7 @@ resource "aws_dynamodb_table" "lock-state" {
 
 # terraform {
 #   backend "s3" {
-#     bucket         = "remote-tf-state"
+#     bucket         = "souher-remote-tf-state"
 #     key            = "global/s3/terraform.tfstate"
 #     region         = "eu-west-2"
     
