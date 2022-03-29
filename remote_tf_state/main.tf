@@ -45,6 +45,6 @@ terraform {
     region         = "eu-west-2"
     
     dynamodb_table = "souher-remote-tf-state-lock"
-    encrypt        = false
+    encrypt        = true
   }
 }
