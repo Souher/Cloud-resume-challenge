@@ -1,3 +1,13 @@
+terraform {
+
+  required_version = "~> 0.12.31"
+
+  required_providers {
+    source = "hashicorp/aws"
+    aws  = "~> 3.74.1"
+  }
+}
+
 provider "aws" {
   region = "eu-west-2"
 }
@@ -27,6 +37,7 @@ resource "aws_dynamodb_table" "lock-state" {
     type = "S"
   }
 }
+
 
 # terraform {
 #   backend "s3" {
