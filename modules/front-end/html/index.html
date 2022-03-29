@@ -41,9 +41,10 @@
               <ul>
                <li>HTML, CSS, JavaScript hosted in a S3 bucket</li>
                <li>AWS tools used for the website; website configured S3 bucket, Cloudfront for distrubtion, route53, ACM for SSL and IAM</li>
-               <li>Terraform for Infrastructure as Code</li>
                <li>AWS tools used for the visitor counter; DynamoDB, Lambda written in python using boto3, API Gateway and IAM</li>
+               <li>Terraform for Infrastructure as Code</li>
                <li><a href="https://github.com/Souher/Cloud-resume-challenge/actions" target="_blank">GitHub Actions</a> A CI/CD pipepline to deploy Terraform on push. It also includes a manual approval step </li>
+               <li>Store Terraform state file in separate s3 bucket with versioning enabled for rollback</li>
               </ul>
           </div>
         </div>
