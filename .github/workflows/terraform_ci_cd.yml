@@ -70,7 +70,7 @@ jobs:
         id: apply
         run: cd runtime && terraform apply -auto-approve
 
-Terraform-apply-remote-tf-state:
+  Terraform-apply-remote-tf-state:
     needs: [Terraform-apply]
     runs-on: ubuntu-latest
     
