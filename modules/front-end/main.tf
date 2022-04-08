@@ -1,4 +1,6 @@
-#### S3 website ##### 
+####
+# S3 Website 
+####
 resource "aws_s3_bucket" "souher_cloud_resume_site" {
   bucket = var.bucket-name #Name will be given at runtime
   acl    = "public-read"
@@ -52,7 +54,9 @@ content_type = "text/js"
 etag = filemd5("${path.module}/html/${each.value}") #Creates and checks hash of local file vs remote. If there are any changes to local file, the hash will be different. Upload new changes at the next apply.
 }
 
-##### Cloudfront distribution ####
+####
+# Cloudfront distribution 
+####
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
@@ -109,16 +113,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 }
 
-#### Route53 ####
+####
+# Route53 
+####
 
 resource "aws_route53_zone" "main" {
   name = var.domain-name
 }
-
-# data "aws_route53_zone" "public" {
-#   name         = var.domain-name
-#   private_zone = false
-# }
 
 resource "aws_route53_record" "domain" {
   zone_id = aws_route53_zone.main.zone_id
@@ -130,18 +131,6 @@ resource "aws_route53_record" "domain" {
     evaluate_target_health = false
   }
 }
-
-/*
-resource "aws_route53_record" "www-domain" {
-zone_id = aws_route53_zone.main.zone_id
-name    = "www.${var.domain-name}"
-type    = "A"
-alias {
-  name = aws_cloudfront_distribution.s3_distribution.domain_name
-  zone_id = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
-  evaluate_target_health = false
-}}*/
-
 
 #### ACM ####
 # SSL Certificate

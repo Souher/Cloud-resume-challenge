@@ -31,6 +31,6 @@ module "Dynamodb-lambda-gatewayv2" {
 
 
 
-output "website_endpoint" {
-  value = module.website.website_endpoint
-} 
+# output "website_endpoint" {
+#   value = module.website.website_endpoint
+# } 

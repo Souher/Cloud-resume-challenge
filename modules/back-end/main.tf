@@ -1,3 +1,7 @@
+####
+# API GateWay 
+####
+
 resource "aws_apigatewayv2_api" "counter_gateway" {
   name        = var.api-gatewayv2-name
   description = "Receive count increase from front end and return count from dynamoDB"
@@ -80,11 +84,19 @@ resource "aws_apigatewayv2_route" "write_route_gateway" {
   target = "integrations/${aws_apigatewayv2_integration.write_integration_gateway.id}"
 }
 
+####
+# CloudWatch log 
+####
+
 resource "aws_cloudwatch_log_group" "api_gw_log" {
   name = "${aws_apigatewayv2_api.counter_gateway.name}"
 
   retention_in_days = 1
 }
+
+####
+# LAMBDA 
+####
 
 resource "aws_iam_role" "lambda_assume_role" {
   name = "lambda-assume-role"
@@ -156,6 +168,10 @@ resource "aws_lambda_function" "read_function" {
   source_code_hash = data.archive_file.lambda_read_functions.output_base64sha256
 
 }
+
+####
+# DynamoDB 
+####
 
 resource "aws_dynamodb_table" "ddb_table" {
   name           = "visitor-count"
