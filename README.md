@@ -83,7 +83,7 @@ The last stages of the challenge was to include a CI/CD pipeline. I also include
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Integration test
+- [] Integration test
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
