@@ -29,6 +29,8 @@
 ## About The Project
 This project was challenge set by [Forrest Brazeal](https://forrestbrazeal.com/). Details of the challenge can be found [here](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
 
+You can visit the website [here](souhercloudresume.com). Or alternatively you can enter souhercloudresume.com into your browser.
+
 ![Cloud Architecture](./CloudArchitecture.jpeg?raw=true "Cloud Architecture")
 
 <p align="right">(<a href="#top">back to top</a>)</p>
