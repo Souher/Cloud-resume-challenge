@@ -2,9 +2,9 @@ from pprint import pprint
 import unittest
 import boto3 
 from botocore.exceptions import ClientError
-from moto import mock_dynamodb2 
+from moto import mock_dynamodb
 
-@mock_dynamodb2
+@mock_dynamodb
 class TestDatabaseFunctions(unittest.TestCase):
 
     def setUp(self):
